@@ -1,9 +1,7 @@
-#require 'data_mapper'
-#require 'dm-postgres-adapter'
 require 'capybara/rspec'
-#require 'dm-rspec'
 require './app/models/link'
 require './app/app'
+require 'database_cleaner'
 
 Capybara.app = List
 
