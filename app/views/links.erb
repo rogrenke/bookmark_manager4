@@ -1,1 +1,3 @@
-<%= @links %>
+<% @all_links.each do |link|  %>
+	<br> Title: <%= link.title %> URL: <%= link.url %></br>
+<% end %>
