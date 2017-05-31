@@ -1,5 +1,4 @@
-DatabaseCleaner.strategy = :transaction
-DatabaseCleaner.cleaning do
+
 
 feature 'Seeing list of links' do
   scenario 'user can see list of links, even if it\'s empty' do
@@ -11,6 +10,4 @@ feature 'Seeing list of links' do
       expect(page).to have_content 'Google'
     #  end
   end
-end
-
 end
