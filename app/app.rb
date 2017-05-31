@@ -6,7 +6,9 @@ require_relative 'models/link'
 
 class List < Sinatra::Base
 
-
+  get '/' do
+    "Bookmark Manager"
+  end
 
   get '/links' do
    # @links = []
