@@ -1,5 +1,5 @@
-require 'data_mapper'
-require 'dm-postgres-adapter'
+# require 'data_mapper'
+# require 'dm-postgres-adapter'
 require 'capybara/rspec'
 #require 'dm-rspec'
 
