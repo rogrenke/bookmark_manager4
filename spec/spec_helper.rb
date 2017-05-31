@@ -1,4 +1,4 @@
-ENV['RACK_ENV']= 'test'
+ENV['RACK_ENV'] ||= 'test'
 require 'capybara/rspec'
 require './app/models/link'
 require './app/app'
