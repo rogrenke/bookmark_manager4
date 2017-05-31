@@ -3,11 +3,9 @@ feature 'Seeing list of links' do
     link.create(url: 'http://google.com', name: 'Google')	  
     visit '/'
     expect(page.status_code).to eq 200
+    
+    within 'links' do
+      expect(page).to have_content 'Google'
+     end
   end
-
-  #scenario 'user can see an existing link in the list' do
-   # Link.create(url: 'http://google.com', name: 'Google')
-   # visit '/'
-  #  expect(page).to have_content 'Google'
-  #end
 end
