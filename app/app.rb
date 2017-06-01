@@ -22,9 +22,12 @@ class List < Sinatra::Base
 
   post '/links' do
     link = Link.create(title: params[:title], url: params[:url])
-    tag = Tag.create(name: params[:tags])
-    link.tags << tag
-    link.save
+    tag_name_array = params[:tags].split(';')
+    tag_name_array.each do |tag_name|
+      tag = Tag.create(name: tag_name)
+      link.tags << tag
+      link.save
+    end
     # link = LinkTag.get(link.id, tag.id)
     # p link.tag_id
     # @tag =  Tag.get(link.tag_id).name
@@ -34,7 +37,9 @@ class List < Sinatra::Base
 
   get '/tags/:name' do
     @links = Link.all.select do |link|
-      link.tags.first.name == params[:name]
+      link.tags.map(&:name).include?(params[:name])
+      # link.tags.first.name == params[:name]
+
     end
     erb :tags
   end
