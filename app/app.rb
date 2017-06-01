@@ -32,4 +32,11 @@ class List < Sinatra::Base
     redirect '/links'
   end
 
+  get '/tags/:name' do
+    @links = Link.all.select do |link|
+      link.tags.first.name == params['name']
+    end
+    erb :tags
+  end
+
 end
