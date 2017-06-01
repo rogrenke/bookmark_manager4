@@ -34,7 +34,7 @@ class List < Sinatra::Base
 
   get '/tags/:name' do
     @links = Link.all.select do |link|
-      link.tags.first.name == params['name']
+      link.tags.first.name == params[:name]
     end
     erb :tags
   end
